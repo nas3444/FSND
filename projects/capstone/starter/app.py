@@ -1,4 +1,3 @@
-from ntpath import realpath
 import os
 from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -51,7 +50,7 @@ def create_app(test_config=None):
       actors_format = [actor.format() for actor in actors]
       return jsonify({
         "success": True,
-        "actor": actors_format
+        "actors": actors_format
       })
 
     except:
